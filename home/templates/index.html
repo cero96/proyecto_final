@@ -1,0 +1,29 @@
+
+<html >
+<head>
+    
+    <title>mi sitio web</title>
+    
+</head>
+<body>
+
+    {%if not auto_disponibles%}
+
+        <h3>No Tenemos Vehiculos Disponibles</h3>
+
+    {%else%}
+
+        <h1>{{ mensaje }}</h1>
+        <ul>
+
+            {% for auto_disponible in auto_disponibles %}
+
+                <li>{{ auto_disponible }}</li>
+
+            {%endfor%}
+        </ul>
+
+    {%endif%}
+   
+</body>
+</html>
