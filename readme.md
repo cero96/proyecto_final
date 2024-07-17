@@ -127,5 +127,3 @@ pip3 freeze > requirements.txt
 pip freeze > requirements.txt
 ~~~
 
-# Nota
-Para los siguientes pasos se deberán seguir las instrucciones del docente en clase. No olvide que puedes contactarlo a <paperez@puce.edu.ec> o a <pablo.perez@uisek.edu.ec> dependiendo de la institución donde te encuentres
