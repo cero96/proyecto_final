@@ -1,9 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
-
-
 class Cliente(models.Model):
     nombre_cliente = models.CharField(max_length=100)
     apellido_cliente = models.CharField(max_length=100)
@@ -12,11 +8,6 @@ class Cliente(models.Model):
     edad_cliente = models.IntegerField()
     cedula_cliente = models.IntegerField()
     correo_cliente = models.CharField(max_length=100)
-
-class Compra(models.Model):
-    auto_comprado = models.ForeignKey('Automovil', on_delete=models.CASCADE)
-    nombre_comprador = models.CharField(max_length=100)
-    apellido_comprador = models.CharField(max_length=100)
 
 class Automovil(models.Model):
     modelo_auto = models.CharField(max_length=100)
@@ -29,6 +20,13 @@ class Automovil(models.Model):
     trasmision_auto = models.CharField(max_length=50)
     motor_auto = models.CharField(max_length=50)
     consumo_gasolina = models.DecimalField(max_digits=5, decimal_places=2)
+
+class Compra(models.Model):
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    automovil = models.ForeignKey(Automovil, on_delete=models.CASCADE)
+    nombre_comprador = models.CharField(max_length=100)
+    apellido_comprador = models.CharField(max_length=100)
+
 
 
     
